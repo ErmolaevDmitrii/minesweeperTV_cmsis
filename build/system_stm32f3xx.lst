@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccwrIriF.s 			page 1
+ARM GAS  /tmp/ccFcoDqA.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
   28:system_stm32f3xx.c ****   *-----------------------------------------------------------------------------
   29:system_stm32f3xx.c ****   *        System Clock source                    | HSI
   30:system_stm32f3xx.c ****   *-----------------------------------------------------------------------------
-ARM GAS  /tmp/ccwrIriF.s 			page 2
+ARM GAS  /tmp/ccFcoDqA.s 			page 2
 
 
   31:system_stm32f3xx.c ****   *        SYSCLK(Hz)                             | 8000000
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
   85:system_stm32f3xx.c ****   */
   86:system_stm32f3xx.c **** #if !defined  (HSE_VALUE) 
   87:system_stm32f3xx.c ****   #define HSE_VALUE    ((uint32_t)8000000) /*!< Default value of the External oscillator in Hz.
-ARM GAS  /tmp/ccwrIriF.s 			page 3
+ARM GAS  /tmp/ccFcoDqA.s 			page 3
 
 
   88:system_stm32f3xx.c ****                                                 This value can be provided and adapted by the user 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
  142:system_stm32f3xx.c ****   * @{
  143:system_stm32f3xx.c ****   */
  144:system_stm32f3xx.c **** 
-ARM GAS  /tmp/ccwrIriF.s 			page 4
+ARM GAS  /tmp/ccFcoDqA.s 			page 4
 
 
  145:system_stm32f3xx.c **** /**
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
   58              		.loc 1 169 3 is_stmt 1 view .LVU9
   59              		.loc 1 169 11 is_stmt 0 view .LVU10
   60 002c 1A68     		ldr	r2, [r3]
-ARM GAS  /tmp/ccwrIriF.s 			page 5
+ARM GAS  /tmp/ccFcoDqA.s 			page 5
 
 
   61 002e 22F48022 		bic	r2, r2, #262144
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
   96              		.cfi_endproc
   97              	.LFE130:
   99              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
-ARM GAS  /tmp/ccwrIriF.s 			page 6
+ARM GAS  /tmp/ccFcoDqA.s 			page 6
 
 
  100              		.align	1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
  115              	.LVL0:
  229:system_stm32f3xx.c **** 
  230:system_stm32f3xx.c ****   /* Get SYSCLK source -------------------------------------------------------*/
-ARM GAS  /tmp/ccwrIriF.s 			page 7
+ARM GAS  /tmp/ccFcoDqA.s 			page 7
 
 
  231:system_stm32f3xx.c ****   tmp = RCC->CFGR & RCC_CFGR_SWS;
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
  272:system_stm32f3xx.c ****       break;
  273:system_stm32f3xx.c ****     default: /* HSI used as system clock */
  274:system_stm32f3xx.c ****       SystemCoreClock = HSI_VALUE;
-ARM GAS  /tmp/ccwrIriF.s 			page 8
+ARM GAS  /tmp/ccFcoDqA.s 			page 8
 
 
  129              		.loc 1 274 7 view .LVU28
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
  170              		.loc 1 239 7 is_stmt 1 view .LVU43
  239:system_stm32f3xx.c ****       break;
  171              		.loc 1 239 23 is_stmt 0 view .LVU44
-ARM GAS  /tmp/ccwrIriF.s 			page 9
+ARM GAS  /tmp/ccFcoDqA.s 			page 9
 
 
  172 0036 124B     		ldr	r3, .L12+4
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
  210 005a 07D0     		beq	.L11
  257:system_stm32f3xx.c ****       }
  211              		.loc 1 257 9 is_stmt 1 view .LVU61
-ARM GAS  /tmp/ccwrIriF.s 			page 10
+ARM GAS  /tmp/ccFcoDqA.s 			page 10
 
 
  257:system_stm32f3xx.c ****       }
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
  260 0000 00127A00 		.word	8000000
  261              		.section	.rodata.AHBPrescTable,"a"
  262              		.align	2
-ARM GAS  /tmp/ccwrIriF.s 			page 11
+ARM GAS  /tmp/ccFcoDqA.s 			page 11
 
 
  263              		.set	.LANCHOR1,. + 0
@@ -635,23 +635,23 @@ ARM GAS  /tmp/ccwrIriF.s 			page 1
  298              		.file 2 "/usr/lib/gcc/arm-none-eabi/8.3.1/include/stdint.h"
  299              		.file 3 "/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h"
  300              		.file 4 "/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h"
- 301              		.file 5 "/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303xe.h"
-ARM GAS  /tmp/ccwrIriF.s 			page 12
+ 301              		.file 5 "stm32f303xe.h"
+ARM GAS  /tmp/ccFcoDqA.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 system_stm32f3xx.c
-     /tmp/ccwrIriF.s:18     .text.SystemInit:0000000000000000 $t
-     /tmp/ccwrIriF.s:26     .text.SystemInit:0000000000000000 SystemInit
-     /tmp/ccwrIriF.s:92     .text.SystemInit:0000000000000058 $d
-     /tmp/ccwrIriF.s:100    .text.SystemCoreClockUpdate:0000000000000000 $t
-     /tmp/ccwrIriF.s:107    .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
-     /tmp/ccwrIriF.s:244    .text.SystemCoreClockUpdate:000000000000007c $d
-     /tmp/ccwrIriF.s:287    .rodata.APBPrescTable:0000000000000000 APBPrescTable
-     /tmp/ccwrIriF.s:266    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
-     /tmp/ccwrIriF.s:259    .data.SystemCoreClock:0000000000000000 SystemCoreClock
-     /tmp/ccwrIriF.s:255    .data.SystemCoreClock:0000000000000000 $d
-     /tmp/ccwrIriF.s:262    .rodata.AHBPrescTable:0000000000000000 $d
-     /tmp/ccwrIriF.s:284    .rodata.APBPrescTable:0000000000000000 $d
+     /tmp/ccFcoDqA.s:18     .text.SystemInit:0000000000000000 $t
+     /tmp/ccFcoDqA.s:26     .text.SystemInit:0000000000000000 SystemInit
+     /tmp/ccFcoDqA.s:92     .text.SystemInit:0000000000000058 $d
+     /tmp/ccFcoDqA.s:100    .text.SystemCoreClockUpdate:0000000000000000 $t
+     /tmp/ccFcoDqA.s:107    .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
+     /tmp/ccFcoDqA.s:244    .text.SystemCoreClockUpdate:000000000000007c $d
+     /tmp/ccFcoDqA.s:287    .rodata.APBPrescTable:0000000000000000 APBPrescTable
+     /tmp/ccFcoDqA.s:266    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
+     /tmp/ccFcoDqA.s:259    .data.SystemCoreClock:0000000000000000 SystemCoreClock
+     /tmp/ccFcoDqA.s:255    .data.SystemCoreClock:0000000000000000 $d
+     /tmp/ccFcoDqA.s:262    .rodata.AHBPrescTable:0000000000000000 $d
+     /tmp/ccFcoDqA.s:284    .rodata.APBPrescTable:0000000000000000 $d
 
 NO UNDEFINED SYMBOLS
