@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccaF0h8L.s 			page 1
+ARM GAS  /tmp/ccbi20RK.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
   45              		.cfi_endproc
   46              	.LFE130:
   48              		.section	.text.delay_ms,"ax",%progbits
-ARM GAS  /tmp/ccaF0h8L.s 			page 2
+ARM GAS  /tmp/ccbi20RK.s 			page 2
 
 
   49              		.align	1
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
   19:main.c        **** void delay_us(uint16_t us) {
   99              		.loc 1 19 28 is_stmt 1 view -0
  100              		.cfi_startproc
-ARM GAS  /tmp/ccaF0h8L.s 			page 3
+ARM GAS  /tmp/ccbi20RK.s 			page 3
 
 
  101              		@ args = 0, pretend = 0, frame = 0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  146              		.loc 1 30 5 view .LVU20
  147 0002 FFF7FEFF 		bl	SystemInit
  148              	.LVL3:
-ARM GAS  /tmp/ccaF0h8L.s 			page 4
+ARM GAS  /tmp/ccbi20RK.s 			page 4
 
 
   31:main.c        ****     // 1. flash cycles count
@@ -213,10 +213,10 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  170 0032 1A68     		ldr	r2, [r3]
  171 0034 42F48032 		orr	r2, r2, #65536
  172 0038 1A60     		str	r2, [r3]
-  39:main.c        ****     while(!READ_BIT(RCC->CR, RCC_CR_HSERDY)) {}
+  39:main.c        ****     while(!READ_BIT(RCC->CR, RCC_CR_HSERDY));
  173              		.loc 1 39 5 view .LVU26
  174              	.L13:
- 175              		.loc 1 39 47 discriminator 1 view .LVU27
+ 175              		.loc 1 39 45 discriminator 1 view .LVU27
  176              		.loc 1 39 12 is_stmt 0 discriminator 1 view .LVU28
  177 003a 154B     		ldr	r3, .L17+4
  178 003c 1B68     		ldr	r3, [r3]
@@ -238,17 +238,17 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  191 0058 5A60     		str	r2, [r3, #4]
   43:main.c        ****     // 5. pll start
   44:main.c        ****     SET_BIT(RCC->CR, RCC_CR_PLLON);
-ARM GAS  /tmp/ccaF0h8L.s 			page 5
+ARM GAS  /tmp/ccbi20RK.s 			page 5
 
 
  192              		.loc 1 44 5 view .LVU32
  193 005a 1A68     		ldr	r2, [r3]
  194 005c 42F08072 		orr	r2, r2, #16777216
  195 0060 1A60     		str	r2, [r3]
-  45:main.c        ****     while(!READ_BIT(RCC->CR, RCC_CR_PLLRDY)) {}
+  45:main.c        ****     while(!READ_BIT(RCC->CR, RCC_CR_PLLRDY));
  196              		.loc 1 45 5 view .LVU33
  197              	.L14:
- 198              		.loc 1 45 47 discriminator 1 view .LVU34
+ 198              		.loc 1 45 45 discriminator 1 view .LVU34
  199              		.loc 1 45 12 is_stmt 0 discriminator 1 view .LVU35
  200 0062 0B4B     		ldr	r3, .L17+4
  201 0064 1B68     		ldr	r3, [r3]
@@ -263,10 +263,10 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  208 0070 23F00303 		bic	r3, r3, #3
  209 0074 43F00203 		orr	r3, r3, #2
  210 0078 5360     		str	r3, [r2, #4]
-  48:main.c        ****     while(READ_BIT(RCC->CFGR, RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL) {}
+  48:main.c        ****     while(READ_BIT(RCC->CFGR, RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
  211              		.loc 1 48 5 view .LVU38
  212              	.L15:
- 213              		.loc 1 48 67 discriminator 1 view .LVU39
+ 213              		.loc 1 48 65 discriminator 1 view .LVU39
  214              		.loc 1 48 11 is_stmt 0 discriminator 1 view .LVU40
  215 007a 054B     		ldr	r3, .L17+4
  216 007c 5B68     		ldr	r3, [r3, #4]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  239              		.thumb
  240              		.thumb_func
  241              		.fpu fpv4-sp-d16
-ARM GAS  /tmp/ccaF0h8L.s 			page 6
+ARM GAS  /tmp/ccbi20RK.s 			page 6
 
 
  243              	TIM3_Init:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  278              		.loc 1 71 1 is_stmt 0 view .LVU57
  279 002c 7047     		bx	lr
  280              	.L21:
-ARM GAS  /tmp/ccaF0h8L.s 			page 7
+ARM GAS  /tmp/ccbi20RK.s 			page 7
 
 
  281 002e 00BF     		.align	2
@@ -366,43 +366,135 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  283 0030 00100240 		.word	1073876992
  284              		.cfi_endproc
  285              	.LFE134:
- 287              		.section	.text.main,"ax",%progbits
+ 287              		.section	.text.SPI1_Init,"ax",%progbits
  288              		.align	1
- 289              		.global	main
+ 289              		.global	SPI1_Init
  290              		.syntax unified
  291              		.thumb
  292              		.thumb_func
  293              		.fpu fpv4-sp-d16
- 295              	main:
+ 295              	SPI1_Init:
  296              	.LFB135:
   72:main.c        **** 
-  73:main.c        **** int main (void)
-  74:main.c        **** {
- 297              		.loc 1 74 1 is_stmt 1 view -0
+  73:main.c        **** void SPI1_Init(void) {
+ 297              		.loc 1 73 22 is_stmt 1 view -0
  298              		.cfi_startproc
- 299              		@ Volatile: function does not return.
- 300              		@ args = 0, pretend = 0, frame = 0
- 301              		@ frame_needed = 0, uses_anonymous_args = 0
- 302 0000 08B5     		push	{r3, lr}
- 303              	.LCFI1:
- 304              		.cfi_def_cfa_offset 8
- 305              		.cfi_offset 3, -8
- 306              		.cfi_offset 14, -4
-  75:main.c        ****     RCC_Init();
- 307              		.loc 1 75 5 view .LVU59
- 308 0002 FFF7FEFF 		bl	RCC_Init
- 309              	.LVL5:
-  76:main.c        ****     SysTick_Config(SystemCoreClock / 1000);
- 310              		.loc 1 76 5 view .LVU60
- 311 0006 244B     		ldr	r3, .L26
- 312 0008 1B68     		ldr	r3, [r3]
- 313 000a 244A     		ldr	r2, .L26+4
- 314 000c A2FB0323 		umull	r2, r3, r2, r3
- 315 0010 9B09     		lsrs	r3, r3, #6
- 316              	.LVL6:
- 317              	.LBB8:
- 318              	.LBI8:
- 319              		.file 2 "/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h"
+ 299              		@ args = 0, pretend = 0, frame = 0
+ 300              		@ frame_needed = 0, uses_anonymous_args = 0
+ 301              		@ link register save eliminated.
+  74:main.c        ****     // 1. GPIO pins used by SPI1 init
+  75:main.c        ****     SET_BIT(RCC->AHBENR, RCC_AHBENR_GPIOAEN);
+ 302              		.loc 1 75 5 view .LVU59
+ 303 0000 114A     		ldr	r2, .L23
+ 304 0002 5369     		ldr	r3, [r2, #20]
+ 305 0004 43F40033 		orr	r3, r3, #131072
+ 306 0008 5361     		str	r3, [r2, #20]
+  76:main.c        ****     GPIOA->MODER |= 0x02 << 10 | 0x02 << 14;
+ 307              		.loc 1 76 5 view .LVU60
+ 308              		.loc 1 76 18 is_stmt 0 view .LVU61
+ 309 000a 4FF09043 		mov	r3, #1207959552
+ 310 000e 1968     		ldr	r1, [r3]
+ 311 0010 41F40841 		orr	r1, r1, #34816
+ 312 0014 1960     		str	r1, [r3]
+  77:main.c        **** 
+  78:main.c        ****     GPIOA->AFR[0] |= (0x05<<5*4);
+ 313              		.loc 1 78 5 is_stmt 1 view .LVU62
+ 314              		.loc 1 78 19 is_stmt 0 view .LVU63
+ 315 0016 196A     		ldr	r1, [r3, #32]
+ 316 0018 41F4A001 		orr	r1, r1, #5242880
+ 317 001c 1962     		str	r1, [r3, #32]
+  79:main.c        **** 	//GPIOA->AFR[0] |= (0x05<<6*4);
+  80:main.c        **** 	GPIOA->AFR[0] |= (0x05<<7*4);
+ 318              		.loc 1 80 2 is_stmt 1 view .LVU64
+ 319              		.loc 1 80 16 is_stmt 0 view .LVU65
+ 320 001e 196A     		ldr	r1, [r3, #32]
+ 321 0020 41F0A041 		orr	r1, r1, #1342177280
+ 322 0024 1962     		str	r1, [r3, #32]
+  81:main.c        ****     // 2. enable SPI1 clock on APB2 bus
+  82:main.c        ****     SET_BIT(RCC->APB2ENR, RCC_APB2ENR_SPI1EN);
+ 323              		.loc 1 82 5 is_stmt 1 view .LVU66
+ 324 0026 9369     		ldr	r3, [r2, #24]
+ 325 0028 43F48053 		orr	r3, r3, #4096
+ 326 002c 9361     		str	r3, [r2, #24]
+  83:main.c        ****     //GPIOA->OTYPER = 0;
+  84:main.c        ****     // 3. SPI1 init
+ARM GAS  /tmp/ccbi20RK.s 			page 8
+
+
+  85:main.c        ****     SPI1->CR1 = 1 << SPI_CR1_BIDIMODE_Pos | 1 << SPI_CR1_BIDIOE_Pos |
+ 327              		.loc 1 85 5 view .LVU67
+ 328              		.loc 1 85 15 is_stmt 0 view .LVU68
+ 329 002e 074B     		ldr	r3, .L23+4
+ 330 0030 4CF29432 		movw	r2, #50068
+ 331 0034 1A60     		str	r2, [r3]
+  86:main.c        ****                 1 << SPI_CR1_LSBFIRST_Pos | 1 << SPI_CR1_MSTR_Pos   |
+  87:main.c        ****                 1 << SPI_CR1_SSM_Pos      | 0x02 << SPI_CR1_BR_Pos  |
+  88:main.c        ****                 1 << SPI_CR1_SSI_Pos      | 1 << SPI_CR1_LSBFIRST_Pos;
+  89:main.c        ****     SPI1->CR2 = 0x07 << SPI_CR2_DS_Pos;
+ 332              		.loc 1 89 5 is_stmt 1 view .LVU69
+ 333              		.loc 1 89 15 is_stmt 0 view .LVU70
+ 334 0036 4FF4E062 		mov	r2, #1792
+ 335 003a 5A60     		str	r2, [r3, #4]
+  90:main.c        ****     // 4. enable SPI1
+  91:main.c        ****     SET_BIT(SPI1->CR1, SPI_CR1_SPE);
+ 336              		.loc 1 91 5 is_stmt 1 view .LVU71
+ 337 003c 1A68     		ldr	r2, [r3]
+ 338 003e 42F04002 		orr	r2, r2, #64
+ 339 0042 1A60     		str	r2, [r3]
+  92:main.c        ****     //SPI1->CR1 |= 1 << SPI_CR1_SPE;
+  93:main.c        ****     return;
+ 340              		.loc 1 93 5 view .LVU72
+  94:main.c        **** }
+ 341              		.loc 1 94 1 is_stmt 0 view .LVU73
+ 342 0044 7047     		bx	lr
+ 343              	.L24:
+ 344 0046 00BF     		.align	2
+ 345              	.L23:
+ 346 0048 00100240 		.word	1073876992
+ 347 004c 00300140 		.word	1073819648
+ 348              		.cfi_endproc
+ 349              	.LFE135:
+ 351              		.section	.text.main,"ax",%progbits
+ 352              		.align	1
+ 353              		.global	main
+ 354              		.syntax unified
+ 355              		.thumb
+ 356              		.thumb_func
+ 357              		.fpu fpv4-sp-d16
+ 359              	main:
+ 360              	.LFB136:
+  95:main.c        **** 
+  96:main.c        **** int main (void)
+  97:main.c        **** {
+ 361              		.loc 1 97 1 is_stmt 1 view -0
+ 362              		.cfi_startproc
+ 363              		@ Volatile: function does not return.
+ 364              		@ args = 0, pretend = 0, frame = 0
+ 365              		@ frame_needed = 0, uses_anonymous_args = 0
+ 366 0000 08B5     		push	{r3, lr}
+ 367              	.LCFI1:
+ 368              		.cfi_def_cfa_offset 8
+ 369              		.cfi_offset 3, -8
+ 370              		.cfi_offset 14, -4
+  98:main.c        ****     //Peripherial init section
+  99:main.c        ****     RCC_Init();
+ARM GAS  /tmp/ccbi20RK.s 			page 9
+
+
+ 371              		.loc 1 99 5 view .LVU75
+ 372 0002 FFF7FEFF 		bl	RCC_Init
+ 373              	.LVL5:
+ 100:main.c        ****     SysTick_Config(SystemCoreClock / 1000);
+ 374              		.loc 1 100 5 view .LVU76
+ 375 0006 2C4B     		ldr	r3, .L33
+ 376 0008 1B68     		ldr	r3, [r3]
+ 377 000a 2C4A     		ldr	r2, .L33+4
+ 378 000c A2FB0323 		umull	r2, r3, r2, r3
+ 379 0010 9B09     		lsrs	r3, r3, #6
+ 380              	.LVL6:
+ 381              	.LBB8:
+ 382              	.LBI8:
+ 383              		.file 2 "/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h"
    1:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /**************************************************************************//**
    2:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  * @file     core_cm4.h
    3:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  * @brief    CMSIS Cortex-M4 Core Peripheral Access Layer Header File
@@ -418,9 +510,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
   13:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  * not use this file except in compliance with the License.
   14:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  * You may obtain a copy of the License at
   15:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  *
-ARM GAS  /tmp/ccaF0h8L.s 			page 8
-
-
   16:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  * www.apache.org/licenses/LICENSE-2.0
   17:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  *
   18:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  * Unless required by applicable law or agreed to in writing, software
@@ -449,6 +538,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
   41:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \page CMSIS_MISRA_Exceptions  MISRA-C:2004 Compliance Exceptions
   42:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   CMSIS violates the following MISRA-C:2004 rules:
   43:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccbi20RK.s 			page 10
+
+
   44:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****    \li Required Rule 8.5, object/function definition in header file.<br>
   45:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****      Function definitions in header files are used to allow 'inlining'.
   46:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -478,9 +570,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
   70:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
   71:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define __CORTEX_M                (4U)                                   /*!< Cortex-M Core */
   72:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 9
-
-
   73:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /** __FPU_USED indicates whether an FPU is used or not.
   74:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     For this, __FPU_PRESENT has to be checked prior to making use of FPU specific registers and fun
   75:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** */
@@ -509,6 +598,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
   98:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #endif
   99:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  100:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #elif defined ( __GNUC__ )
+ARM GAS  /tmp/ccbi20RK.s 			page 11
+
+
  101:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #if defined (__VFP_FP__) && !defined(__SOFTFP__)
  102:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     #if defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)
  103:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****       #define __FPU_USED       1U
@@ -538,9 +630,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  127:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****       #define __FPU_USED       1U
  128:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     #else
  129:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****       #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
-ARM GAS  /tmp/ccaF0h8L.s 			page 10
-
-
  130:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****       #define __FPU_USED       0U
  131:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     #endif
  132:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #else
@@ -569,6 +658,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  155:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     #endif
  156:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #else
  157:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     #define __FPU_USED         0U
+ARM GAS  /tmp/ccbi20RK.s 			page 12
+
+
  158:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #endif
  159:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  160:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #endif
@@ -598,9 +690,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  184:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     #warning "__CM4_REV not defined in device header file; using default!"
  185:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #endif
  186:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 11
-
-
  187:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #ifndef __FPU_PRESENT
  188:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     #define __FPU_PRESENT             0U
  189:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     #warning "__FPU_PRESENT not defined in device header file; using default!"
@@ -629,6 +718,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  212:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     <strong>IO Type Qualifiers</strong> are used
  213:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     \li to specify the access to peripheral variables.
  214:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     \li for automatic generation of peripheral register debug information.
+ARM GAS  /tmp/ccbi20RK.s 			page 13
+
+
  215:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** */
  216:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #ifdef __cplusplus
  217:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #define   __I     volatile             /*!< Defines 'read only' permissions */
@@ -658,9 +750,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  241:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   - Core MPU Register
  242:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   - Core FPU Register
  243:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  ******************************************************************************/
-ARM GAS  /tmp/ccaF0h8L.s 			page 12
-
-
  244:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /**
  245:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \defgroup CMSIS_core_register Defines and Type Definitions
  246:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \brief Type definitions and defines for Cortex-M processor based devices.
@@ -689,6 +778,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  269:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
  270:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
  271:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   } b;                                   /*!< Structure used for bit  access */
+ARM GAS  /tmp/ccbi20RK.s 			page 14
+
+
  272:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   uint32_t w;                            /*!< Type      used for word access */
  273:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** } APSR_Type;
  274:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -718,9 +810,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  298:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** typedef union
  299:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** {
  300:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   struct
-ARM GAS  /tmp/ccaF0h8L.s 			page 13
-
-
  301:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   {
  302:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number */
  303:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t _reserved0:23;              /*!< bit:  9..31  Reserved */
@@ -749,6 +838,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  326:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t ICI_IT_2:2;                 /*!< bit: 25..26  ICI/IT part 2 */
  327:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t Q:1;                        /*!< bit:     27  Saturation condition flag */
  328:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag */
+ARM GAS  /tmp/ccbi20RK.s 			page 15
+
+
  329:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag */
  330:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
  331:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
@@ -778,9 +870,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  355:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define xPSR_T_Pos                         24U                                            /*!< xPSR
  356:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define xPSR_T_Msk                         (1UL << xPSR_T_Pos)                            /*!< xPSR
  357:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 14
-
-
  358:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define xPSR_GE_Pos                        16U                                            /*!< xPSR
  359:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define xPSR_GE_Msk                        (0xFUL << xPSR_GE_Pos)                         /*!< xPSR
  360:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -809,6 +898,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  383:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* CONTROL Register Definitions */
  384:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CONTROL_FPCA_Pos                    2U                                            /*!< CONT
  385:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CONTROL_FPCA_Msk                   (1UL << CONTROL_FPCA_Pos)                      /*!< CONT
+ARM GAS  /tmp/ccbi20RK.s 			page 16
+
+
  386:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  387:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CONTROL_SPSEL_Pos                   1U                                            /*!< CONT
  388:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CONTROL_SPSEL_Msk                  (1UL << CONTROL_SPSEL_Pos)                     /*!< CONT
@@ -838,9 +930,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  412:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t ISPR[8U];               /*!< Offset: 0x100 (R/W)  Interrupt Set Pending Register *
  413:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED2[24U];
  414:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t ICPR[8U];               /*!< Offset: 0x180 (R/W)  Interrupt Clear Pending Register
-ARM GAS  /tmp/ccaF0h8L.s 			page 15
-
-
  415:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED3[24U];
  416:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t IABR[8U];               /*!< Offset: 0x200 (R/W)  Interrupt Active bit Register */
  417:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED4[56U];
@@ -869,6 +958,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  440:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** typedef struct
  441:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** {
  442:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t CPUID;                  /*!< Offset: 0x000 (R/ )  CPUID Base Register */
+ARM GAS  /tmp/ccbi20RK.s 			page 17
+
+
  443:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t ICSR;                   /*!< Offset: 0x004 (R/W)  Interrupt Control and State Regi
  444:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t VTOR;                   /*!< Offset: 0x008 (R/W)  Vector Table Offset Register */
  445:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t AIRCR;                  /*!< Offset: 0x00C (R/W)  Application Interrupt and Reset 
@@ -898,9 +990,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  469:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CPUID_VARIANT_Pos              20U                                            /*!< SCB 
  470:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CPUID_VARIANT_Msk              (0xFUL << SCB_CPUID_VARIANT_Pos)               /*!< SCB 
  471:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 16
-
-
  472:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CPUID_ARCHITECTURE_Pos         16U                                            /*!< SCB 
  473:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CPUID_ARCHITECTURE_Msk         (0xFUL << SCB_CPUID_ARCHITECTURE_Pos)          /*!< SCB 
  474:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -929,6 +1018,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  497:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_ISRPREEMPT_Pos            23U                                            /*!< SCB 
  498:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_ISRPREEMPT_Msk            (1UL << SCB_ICSR_ISRPREEMPT_Pos)               /*!< SCB 
  499:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccbi20RK.s 			page 18
+
+
  500:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_ISRPENDING_Pos            22U                                            /*!< SCB 
  501:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_ISRPENDING_Msk            (1UL << SCB_ICSR_ISRPENDING_Pos)               /*!< SCB 
  502:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -958,9 +1050,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  526:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_AIRCR_PRIGROUP_Pos              8U                                            /*!< SCB 
  527:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_AIRCR_PRIGROUP_Msk             (7UL << SCB_AIRCR_PRIGROUP_Pos)                /*!< SCB 
  528:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 17
-
-
  529:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_AIRCR_SYSRESETREQ_Pos           2U                                            /*!< SCB 
  530:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_AIRCR_SYSRESETREQ_Msk          (1UL << SCB_AIRCR_SYSRESETREQ_Pos)             /*!< SCB 
  531:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -989,6 +1078,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  554:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  555:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CCR_DIV_0_TRP_Pos               4U                                            /*!< SCB 
  556:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CCR_DIV_0_TRP_Msk              (1UL << SCB_CCR_DIV_0_TRP_Pos)                 /*!< SCB 
+ARM GAS  /tmp/ccbi20RK.s 			page 19
+
+
  557:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  558:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CCR_UNALIGN_TRP_Pos             3U                                            /*!< SCB 
  559:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CCR_UNALIGN_TRP_Msk            (1UL << SCB_CCR_UNALIGN_TRP_Pos)               /*!< SCB 
@@ -1018,9 +1110,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  583:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_MEMFAULTPENDED_Pos       13U                                            /*!< SCB 
  584:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_MEMFAULTPENDED_Msk       (1UL << SCB_SHCSR_MEMFAULTPENDED_Pos)          /*!< SCB 
  585:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 18
-
-
  586:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_USGFAULTPENDED_Pos       12U                                            /*!< SCB 
  587:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_USGFAULTPENDED_Msk       (1UL << SCB_SHCSR_USGFAULTPENDED_Pos)          /*!< SCB 
  588:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1049,6 +1138,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  611:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_USGFAULTSR_Pos            16U                                            /*!< SCB 
  612:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_USGFAULTSR_Msk            (0xFFFFUL << SCB_CFSR_USGFAULTSR_Pos)          /*!< SCB 
  613:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccbi20RK.s 			page 20
+
+
  614:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_BUSFAULTSR_Pos             8U                                            /*!< SCB 
  615:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_BUSFAULTSR_Msk            (0xFFUL << SCB_CFSR_BUSFAULTSR_Pos)            /*!< SCB 
  616:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1078,9 +1170,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  640:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_BFARVALID_Pos            (SCB_CFSR_BUSFAULTSR_Pos + 7U)                  /*!< SCB 
  641:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_BFARVALID_Msk            (1UL << SCB_CFSR_BFARVALID_Pos)                 /*!< SCB 
  642:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 19
-
-
  643:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_LSPERR_Pos               (SCB_CFSR_BUSFAULTSR_Pos + 5U)                  /*!< SCB 
  644:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_LSPERR_Msk               (1UL << SCB_CFSR_LSPERR_Pos)                    /*!< SCB 
  645:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1109,6 +1198,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  668:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_NOCP_Pos                 (SCB_CFSR_USGFAULTSR_Pos + 3U)                  /*!< SCB 
  669:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_NOCP_Msk                 (1UL << SCB_CFSR_NOCP_Pos)                      /*!< SCB 
  670:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccbi20RK.s 			page 21
+
+
  671:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_INVPC_Pos                (SCB_CFSR_USGFAULTSR_Pos + 2U)                  /*!< SCB 
  672:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_INVPC_Msk                (1UL << SCB_CFSR_INVPC_Pos)                     /*!< SCB 
  673:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1138,9 +1230,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  697:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_DFSR_DWTTRAP_Pos                2U                                            /*!< SCB 
  698:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_DFSR_DWTTRAP_Msk               (1UL << SCB_DFSR_DWTTRAP_Pos)                  /*!< SCB 
  699:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 20
-
-
  700:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_DFSR_BKPT_Pos                   1U                                            /*!< SCB 
  701:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCB_DFSR_BKPT_Msk                  (1UL << SCB_DFSR_BKPT_Pos)                     /*!< SCB 
  702:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1169,6 +1258,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  725:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  726:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* Interrupt Controller Type Register Definitions */
  727:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCnSCB_ICTR_INTLINESNUM_Pos         0U                                         /*!< ICTR: I
+ARM GAS  /tmp/ccbi20RK.s 			page 22
+
+
  728:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCnSCB_ICTR_INTLINESNUM_Msk        (0xFUL /*<< SCnSCB_ICTR_INTLINESNUM_Pos*/)  /*!< ICTR: I
  729:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  730:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* Auxiliary Control Register Definitions */
@@ -1198,9 +1290,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  754:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  */
  755:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  756:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /**
-ARM GAS  /tmp/ccaF0h8L.s 			page 21
-
-
  757:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \brief  Structure type to access the System Timer (SysTick).
  758:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  */
  759:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** typedef struct
@@ -1229,6 +1318,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  782:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SysTick_LOAD_RELOAD_Msk            (0xFFFFFFUL /*<< SysTick_LOAD_RELOAD_Pos*/)    /*!< SysT
  783:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  784:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* SysTick Current Register Definitions */
+ARM GAS  /tmp/ccbi20RK.s 			page 23
+
+
  785:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SysTick_VAL_CURRENT_Pos             0U                                            /*!< SysT
  786:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SysTick_VAL_CURRENT_Msk            (0xFFFFFFUL /*<< SysTick_VAL_CURRENT_Pos*/)    /*!< SysT
  787:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1258,9 +1350,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  811:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** typedef struct
  812:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** {
  813:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __OM  union
-ARM GAS  /tmp/ccaF0h8L.s 			page 22
-
-
  814:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   {
  815:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     __OM  uint8_t    u8;                 /*!< Offset: 0x000 ( /W)  ITM Stimulus Port 8-bit */
  816:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     __OM  uint16_t   u16;                /*!< Offset: 0x000 ( /W)  ITM Stimulus Port 16-bit */
@@ -1289,6 +1378,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  839:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t PID2;                   /*!< Offset: 0xFE8 (R/ )  ITM Peripheral Identification Re
  840:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t PID3;                   /*!< Offset: 0xFEC (R/ )  ITM Peripheral Identification Re
  841:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t CID0;                   /*!< Offset: 0xFF0 (R/ )  ITM Component  Identification Re
+ARM GAS  /tmp/ccbi20RK.s 			page 24
+
+
  842:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t CID1;                   /*!< Offset: 0xFF4 (R/ )  ITM Component  Identification Re
  843:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t CID2;                   /*!< Offset: 0xFF8 (R/ )  ITM Component  Identification Re
  844:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t CID3;                   /*!< Offset: 0xFFC (R/ )  ITM Component  Identification Re
@@ -1318,9 +1410,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  868:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define ITM_TCR_DWTENA_Msk                 (1UL << ITM_TCR_DWTENA_Pos)                    /*!< ITM 
  869:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  870:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define ITM_TCR_SYNCENA_Pos                 2U                                            /*!< ITM 
-ARM GAS  /tmp/ccaF0h8L.s 			page 23
-
-
  871:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define ITM_TCR_SYNCENA_Msk                (1UL << ITM_TCR_SYNCENA_Pos)                   /*!< ITM 
  872:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  873:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define ITM_TCR_TSENA_Pos                   1U                                            /*!< ITM 
@@ -1349,6 +1438,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  896:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define ITM_LSR_Access_Msk                 (1UL << ITM_LSR_Access_Pos)                    /*!< ITM 
  897:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  898:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define ITM_LSR_Present_Pos                 0U                                            /*!< ITM 
+ARM GAS  /tmp/ccbi20RK.s 			page 25
+
+
  899:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define ITM_LSR_Present_Msk                (1UL /*<< ITM_LSR_Present_Pos*/)               /*!< ITM 
  900:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  901:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /*@}*/ /* end of group CMSIS_ITM */
@@ -1378,9 +1470,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  925:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t MASK0;                  /*!< Offset: 0x024 (R/W)  Mask Register 0 */
  926:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t FUNCTION0;              /*!< Offset: 0x028 (R/W)  Function Register 0 */
  927:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED0[1U];
-ARM GAS  /tmp/ccaF0h8L.s 			page 24
-
-
  928:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t COMP1;                  /*!< Offset: 0x030 (R/W)  Comparator Register 1 */
  929:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t MASK1;                  /*!< Offset: 0x034 (R/W)  Mask Register 1 */
  930:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t FUNCTION1;              /*!< Offset: 0x038 (R/W)  Function Register 1 */
@@ -1409,6 +1498,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  953:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  954:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_NOPRFCNT_Pos              24U                                         /*!< DWT CTR
  955:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_NOPRFCNT_Msk              (0x1UL << DWT_CTRL_NOPRFCNT_Pos)            /*!< DWT CTR
+ARM GAS  /tmp/ccbi20RK.s 			page 26
+
+
  956:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  957:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_CYCEVTENA_Pos             22U                                         /*!< DWT CTR
  958:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_CYCEVTENA_Msk             (0x1UL << DWT_CTRL_CYCEVTENA_Pos)           /*!< DWT CTR
@@ -1438,9 +1530,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
  982:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_SYNCTAP_Msk               (0x3UL << DWT_CTRL_SYNCTAP_Pos)             /*!< DWT CTR
  983:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  984:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_CYCTAP_Pos                 9U                                         /*!< DWT CTR
-ARM GAS  /tmp/ccaF0h8L.s 			page 25
-
-
  985:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_CYCTAP_Msk                (0x1UL << DWT_CTRL_CYCTAP_Pos)              /*!< DWT CTR
  986:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
  987:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_POSTINIT_Pos               5U                                         /*!< DWT CTR
@@ -1469,6 +1558,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1010:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_LSUCNT_LSUCNT_Msk              (0xFFUL /*<< DWT_LSUCNT_LSUCNT_Pos*/)       /*!< DWT LSU
 1011:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1012:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* DWT Folded-instruction Count Register Definitions */
+ARM GAS  /tmp/ccbi20RK.s 			page 27
+
+
 1013:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_FOLDCNT_FOLDCNT_Pos             0U                                         /*!< DWT FOL
 1014:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_FOLDCNT_FOLDCNT_Msk            (0xFFUL /*<< DWT_FOLDCNT_FOLDCNT_Pos*/)     /*!< DWT FOL
 1015:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1498,9 +1590,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1039:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_FUNCTION_CYCMATCH_Pos           7U                                         /*!< DWT FUN
 1040:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_FUNCTION_CYCMATCH_Msk          (0x1UL << DWT_FUNCTION_CYCMATCH_Pos)        /*!< DWT FUN
 1041:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 26
-
-
 1042:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_FUNCTION_EMITRANGE_Pos          5U                                         /*!< DWT FUN
 1043:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_FUNCTION_EMITRANGE_Msk         (0x1UL << DWT_FUNCTION_EMITRANGE_Pos)       /*!< DWT FUN
 1044:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1529,6 +1618,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1067:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED1[55U];
 1068:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t SPPR;                   /*!< Offset: 0x0F0 (R/W)  Selected Pin Protocol Register *
 1069:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED2[131U];
+ARM GAS  /tmp/ccbi20RK.s 			page 28
+
+
 1070:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t FFSR;                   /*!< Offset: 0x300 (R/ )  Formatter and Flush Status Regis
 1071:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t FFCR;                   /*!< Offset: 0x304 (R/W)  Formatter and Flush Control Regi
 1072:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t FSCR;                   /*!< Offset: 0x308 (R/ )  Formatter Synchronization Counte
@@ -1558,9 +1650,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1096:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1097:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* TPI Formatter and Flush Status Register Definitions */
 1098:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FFSR_FtNonStop_Pos              3U                                         /*!< TPI FFS
-ARM GAS  /tmp/ccaF0h8L.s 			page 27
-
-
 1099:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FFSR_FtNonStop_Msk             (0x1UL << TPI_FFSR_FtNonStop_Pos)           /*!< TPI FFS
 1100:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1101:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FFSR_TCPresent_Pos              2U                                         /*!< TPI FFS
@@ -1589,6 +1678,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1124:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1125:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO0_ITM_bytecount_Pos        27U                                         /*!< TPI FIF
 1126:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO0_ITM_bytecount_Msk        (0x3UL << TPI_FIFO0_ITM_bytecount_Pos)      /*!< TPI FIF
+ARM GAS  /tmp/ccbi20RK.s 			page 29
+
+
 1127:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1128:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO0_ETM_ATVALID_Pos          26U                                         /*!< TPI FIF
 1129:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO0_ETM_ATVALID_Msk          (0x3UL << TPI_FIFO0_ETM_ATVALID_Pos)        /*!< TPI FIF
@@ -1618,9 +1710,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1153:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1154:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO1_ITM_bytecount_Pos        27U                                         /*!< TPI FIF
 1155:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO1_ITM_bytecount_Msk        (0x3UL << TPI_FIFO1_ITM_bytecount_Pos)      /*!< TPI FIF
-ARM GAS  /tmp/ccaF0h8L.s 			page 28
-
-
 1156:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1157:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO1_ETM_ATVALID_Pos          26U                                         /*!< TPI FIF
 1158:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO1_ETM_ATVALID_Msk          (0x3UL << TPI_FIFO1_ETM_ATVALID_Pos)        /*!< TPI FIF
@@ -1649,6 +1738,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1181:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_ITCTRL_Mode_Msk                (0x3UL /*<< TPI_ITCTRL_Mode_Pos*/)          /*!< TPI ITC
 1182:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1183:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* TPI DEVID Register Definitions */
+ARM GAS  /tmp/ccbi20RK.s 			page 30
+
+
 1184:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_DEVID_NRZVALID_Pos             11U                                         /*!< TPI DEV
 1185:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_DEVID_NRZVALID_Msk             (0x1UL << TPI_DEVID_NRZVALID_Pos)           /*!< TPI DEV
 1186:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1678,9 +1770,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1210:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1211:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1212:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #if defined (__MPU_PRESENT) && (__MPU_PRESENT == 1U)
-ARM GAS  /tmp/ccaF0h8L.s 			page 29
-
-
 1213:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /**
 1214:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \ingroup  CMSIS_core_register
 1215:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \defgroup CMSIS_MPU     Memory Protection Unit (MPU)
@@ -1709,6 +1798,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1238:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_TYPE_RALIASES                  4U
 1239:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1240:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* MPU Type Register Definitions */
+ARM GAS  /tmp/ccbi20RK.s 			page 31
+
+
 1241:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_TYPE_IREGION_Pos               16U                                            /*!< MPU 
 1242:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_TYPE_IREGION_Msk               (0xFFUL << MPU_TYPE_IREGION_Pos)               /*!< MPU 
 1243:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1738,9 +1830,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1267:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1268:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RBAR_VALID_Pos                  4U                                            /*!< MPU 
 1269:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RBAR_VALID_Msk                 (1UL << MPU_RBAR_VALID_Pos)                    /*!< MPU 
-ARM GAS  /tmp/ccaF0h8L.s 			page 30
-
-
 1270:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1271:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RBAR_REGION_Pos                 0U                                            /*!< MPU 
 1272:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RBAR_REGION_Msk                (0xFUL /*<< MPU_RBAR_REGION_Pos*/)             /*!< MPU 
@@ -1769,6 +1858,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1295:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1296:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_SRD_Pos                    8U                                            /*!< MPU 
 1297:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_SRD_Msk                   (0xFFUL << MPU_RASR_SRD_Pos)                   /*!< MPU 
+ARM GAS  /tmp/ccbi20RK.s 			page 32
+
+
 1298:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1299:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_SIZE_Pos                   1U                                            /*!< MPU 
 1300:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_SIZE_Msk                  (0x1FUL << MPU_RASR_SIZE_Pos)                  /*!< MPU 
@@ -1798,9 +1890,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1324:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t FPDSCR;                 /*!< Offset: 0x00C (R/W)  Floating-Point Default Status Co
 1325:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t MVFR0;                  /*!< Offset: 0x010 (R/ )  Media and FP Feature Register 0 
 1326:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t MVFR1;                  /*!< Offset: 0x014 (R/ )  Media and FP Feature Register 1 
-ARM GAS  /tmp/ccaF0h8L.s 			page 31
-
-
 1327:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** } FPU_Type;
 1328:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1329:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* Floating-Point Context Control Register Definitions */
@@ -1829,6 +1918,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1352:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_USER_Msk                 (1UL << FPU_FPCCR_USER_Pos)                    /*!< FPCC
 1353:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1354:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_LSPACT_Pos                0U                                            /*!< FPCC
+ARM GAS  /tmp/ccbi20RK.s 			page 33
+
+
 1355:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_LSPACT_Msk               (1UL /*<< FPU_FPCCR_LSPACT_Pos*/)              /*!< FPCC
 1356:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1357:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* Floating-Point Context Address Register Definitions */
@@ -1858,9 +1950,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1381:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR0_Square_root_Pos          20U                                            /*!< MVFR
 1382:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR0_Square_root_Msk          (0xFUL << FPU_MVFR0_Square_root_Pos)           /*!< MVFR
 1383:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 32
-
-
 1384:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR0_Divide_Pos               16U                                            /*!< MVFR
 1385:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR0_Divide_Msk               (0xFUL << FPU_MVFR0_Divide_Pos)                /*!< MVFR
 1386:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1889,6 +1978,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1409:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR1_FtZ_mode_Pos              0U                                            /*!< MVFR
 1410:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR1_FtZ_mode_Msk             (0xFUL /*<< FPU_MVFR1_FtZ_mode_Pos*/)          /*!< MVFR
 1411:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccbi20RK.s 			page 34
+
+
 1412:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /*@} end of group CMSIS_FPU */
 1413:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1414:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1918,9 +2010,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1438:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_S_RESET_ST_Msk     (1UL << CoreDebug_DHCSR_S_RESET_ST_Pos)        /*!< Core
 1439:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1440:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_S_RETIRE_ST_Pos    24U                                            /*!< Core
-ARM GAS  /tmp/ccaF0h8L.s 			page 33
-
-
 1441:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_S_RETIRE_ST_Msk    (1UL << CoreDebug_DHCSR_S_RETIRE_ST_Pos)       /*!< Core
 1442:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1443:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_S_LOCKUP_Pos       19U                                            /*!< Core
@@ -1949,6 +2038,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1466:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1467:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_C_DEBUGEN_Pos       0U                                            /*!< Core
 1468:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_C_DEBUGEN_Msk      (1UL /*<< CoreDebug_DHCSR_C_DEBUGEN_Pos*/)     /*!< Core
+ARM GAS  /tmp/ccbi20RK.s 			page 35
+
+
 1469:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1470:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* Debug Core Register Selector Register Definitions */
 1471:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DCRSR_REGWnR_Pos         16U                                            /*!< Core
@@ -1978,9 +2070,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1495:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1496:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DEMCR_VC_INTERR_Pos       9U                                            /*!< Core
 1497:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DEMCR_VC_INTERR_Msk      (1UL << CoreDebug_DEMCR_VC_INTERR_Pos)         /*!< Core
-ARM GAS  /tmp/ccaF0h8L.s 			page 34
-
-
 1498:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1499:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DEMCR_VC_BUSERR_Pos       8U                                            /*!< Core
 1500:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DEMCR_VC_BUSERR_Msk      (1UL << CoreDebug_DEMCR_VC_BUSERR_Pos)         /*!< Core
@@ -2009,6 +2098,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1523:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \brief      Macros for use with bit field definitions (xxx_Pos, xxx_Msk).
 1524:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   @{
 1525:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  */
+ARM GAS  /tmp/ccbi20RK.s 			page 36
+
+
 1526:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1527:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /**
 1528:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \brief   Mask and shift a bit field value for use in a register bit range.
@@ -2038,9 +2130,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1552:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1553:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* Memory mapping of Core Hardware */
 1554:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define SCS_BASE            (0xE000E000UL)                            /*!< System Control Space Bas
-ARM GAS  /tmp/ccaF0h8L.s 			page 35
-
-
 1555:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define ITM_BASE            (0xE0000000UL)                            /*!< ITM Base Address */
 1556:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define DWT_BASE            (0xE0001000UL)                            /*!< DWT Base Address */
 1557:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define TPI_BASE            (0xE0040000UL)                            /*!< TPI Base Address */
@@ -2069,6 +2158,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1580:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /*@} */
 1581:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1582:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccbi20RK.s 			page 37
+
+
 1583:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1584:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /*******************************************************************************
 1585:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  *                Hardware Abstraction Layer
@@ -2098,9 +2190,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1609:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #endif
 1610:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #include CMSIS_NVIC_VIRTUAL_HEADER_FILE
 1611:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #else
-ARM GAS  /tmp/ccaF0h8L.s 			page 36
-
-
 1612:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #define NVIC_SetPriorityGrouping    __NVIC_SetPriorityGrouping
 1613:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #define NVIC_GetPriorityGrouping    __NVIC_GetPriorityGrouping
 1614:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   #define NVIC_EnableIRQ              __NVIC_EnableIRQ
@@ -2129,6 +2218,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1637:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1638:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1639:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* The following EXC_RETURN values are saved the LR on exception entry */
+ARM GAS  /tmp/ccbi20RK.s 			page 38
+
+
 1640:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define EXC_RETURN_HANDLER         (0xFFFFFFF1UL)     /* return to Handler mode, uses MSP after ret
 1641:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define EXC_RETURN_THREAD_MSP      (0xFFFFFFF9UL)     /* return to Thread mode, uses MSP after retu
 1642:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #define EXC_RETURN_THREAD_PSP      (0xFFFFFFFDUL)     /* return to Thread mode, uses PSP after retu
@@ -2158,9 +2250,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1666:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****                 (PriorityGroupTmp << SCB_AIRCR_PRIGROUP_Pos)  );              /* Insert write key a
 1667:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   SCB->AIRCR =  reg_value;
 1668:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** }
-ARM GAS  /tmp/ccaF0h8L.s 			page 37
-
-
 1669:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1670:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1671:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /**
@@ -2189,6 +2278,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1694:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** }
 1695:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1696:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
+ARM GAS  /tmp/ccbi20RK.s 			page 39
+
+
 1697:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /**
 1698:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \brief   Get Interrupt Enable status
 1699:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \details Returns a device specific interrupt enable status from the NVIC interrupt controller.
@@ -2218,9 +2310,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1723:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  */
 1724:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** __STATIC_INLINE void __NVIC_DisableIRQ(IRQn_Type IRQn)
 1725:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** {
-ARM GAS  /tmp/ccaF0h8L.s 			page 38
-
-
 1726:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   if ((int32_t)(IRQn) >= 0)
 1727:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   {
 1728:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     NVIC->ICER[(((uint32_t)IRQn) >> 5UL)] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
@@ -2249,6 +2338,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1751:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     return(0U);
 1752:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   }
 1753:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** }
+ARM GAS  /tmp/ccbi20RK.s 			page 40
+
+
 1754:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1755:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1756:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /**
@@ -2278,9 +2370,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1780:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   {
 1781:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     NVIC->ICPR[(((uint32_t)IRQn) >> 5UL)] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
 1782:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   }
-ARM GAS  /tmp/ccaF0h8L.s 			page 39
-
-
 1783:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** }
 1784:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1785:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -2309,6 +2398,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1808:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \brief   Set Interrupt Priority
 1809:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \details Sets the priority of a device specific interrupt or a processor exception.
 1810:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****            The interrupt number can be positive to specify a device specific interrupt,
+ARM GAS  /tmp/ccbi20RK.s 			page 41
+
+
 1811:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****            or negative to specify a processor exception.
 1812:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \param [in]      IRQn  Interrupt number.
 1813:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \param [in]  priority  Priority to set.
@@ -2338,9 +2430,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1837:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  */
 1838:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** __STATIC_INLINE uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
 1839:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** {
-ARM GAS  /tmp/ccaF0h8L.s 			page 40
-
-
 1840:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1841:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   if ((int32_t)(IRQn) >= 0)
 1842:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   {
@@ -2369,6 +2458,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1865:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   uint32_t PriorityGroupTmp = (PriorityGroup & (uint32_t)0x07UL);   /* only values 0..7 are used   
 1866:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   uint32_t PreemptPriorityBits;
 1867:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   uint32_t SubPriorityBits;
+ARM GAS  /tmp/ccbi20RK.s 			page 42
+
+
 1868:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1869:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   PreemptPriorityBits = ((7UL - PriorityGroupTmp) > (uint32_t)(__NVIC_PRIO_BITS)) ? (uint32_t)(__NV
 1870:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   SubPriorityBits     = ((PriorityGroupTmp + (uint32_t)(__NVIC_PRIO_BITS)) < (uint32_t)7UL) ? (uint
@@ -2398,9 +2490,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1894:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   uint32_t SubPriorityBits;
 1895:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1896:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   PreemptPriorityBits = ((7UL - PriorityGroupTmp) > (uint32_t)(__NVIC_PRIO_BITS)) ? (uint32_t)(__NV
-ARM GAS  /tmp/ccaF0h8L.s 			page 41
-
-
 1897:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   SubPriorityBits     = ((PriorityGroupTmp + (uint32_t)(__NVIC_PRIO_BITS)) < (uint32_t)7UL) ? (uint
 1898:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1899:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   *pPreemptPriority = (Priority >> SubPriorityBits) & (uint32_t)((1UL << (PreemptPriorityBits)) - 1
@@ -2429,6 +2518,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1922:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \details Reads an interrupt vector from interrupt vector table.
 1923:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****            The interrupt number can be positive to specify a device specific interrupt,
 1924:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****            or negative to specify a processor exception.
+ARM GAS  /tmp/ccbi20RK.s 			page 43
+
+
 1925:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \param [in]   IRQn      Interrupt number.
 1926:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \return                 Address of interrupt handler function
 1927:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  */
@@ -2458,9 +2550,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1951:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   }
 1952:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** }
 1953:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 42
-
-
 1954:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /*@} end of CMSIS_Core_NVICFunctions */
 1955:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 1956:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /* ##########################  MPU functions  #################################### */
@@ -2489,6 +2578,9 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 1979:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****    - \b  2: Double + Single precision FPU
 1980:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  */
 1981:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** __STATIC_INLINE uint32_t SCB_GetFPUType(void)
+ARM GAS  /tmp/ccbi20RK.s 			page 44
+
+
 1982:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** {
 1983:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   uint32_t mvfr0;
 1984:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
@@ -2518,9 +2610,6 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 2008:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 2009:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** #if defined (__Vendor_SysTickConfig) && (__Vendor_SysTickConfig == 0U)
 2010:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  /tmp/ccaF0h8L.s 			page 43
-
-
 2011:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** /**
 2012:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \brief   System Tick Configuration
 2013:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   \details Initializes the System Timer and its interrupt, and starts the System Tick Timer.
@@ -2533,222 +2622,277 @@ ARM GAS  /tmp/ccaF0h8L.s 			page 1
 2020:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****            must contain a vendor-specific implementation of this function.
 2021:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****  */
 2022:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
- 320              		.loc 2 2022 26 view .LVU61
- 321              	.LBB9:
+ 384              		.loc 2 2022 26 view .LVU77
+ 385              	.LBB9:
 2023:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** {
 2024:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   if ((ticks - 1UL) > SysTick_LOAD_RELOAD_Msk)
- 322              		.loc 2 2024 3 view .LVU62
- 323              		.loc 2 2024 14 is_stmt 0 view .LVU63
- 324 0012 013B     		subs	r3, r3, #1
- 325              	.LVL7:
- 326              		.loc 2 2024 6 view .LVU64
- 327 0014 B3F1807F 		cmp	r3, #16777216
- 328 0018 09D2     		bcs	.L23
+ 386              		.loc 2 2024 3 view .LVU78
+ 387              		.loc 2 2024 14 is_stmt 0 view .LVU79
+ 388 0012 013B     		subs	r3, r3, #1
+ 389              	.LVL7:
+ 390              		.loc 2 2024 6 view .LVU80
+ 391 0014 B3F1807F 		cmp	r3, #16777216
+ 392 0018 09D2     		bcs	.L26
 2025:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   {
 2026:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****     return (1UL);                                                   /* Reload value impossible */
 2027:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   }
 2028:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** 
 2029:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   SysTick->LOAD  = (uint32_t)(ticks - 1UL);                         /* set reload register */
- 329              		.loc 2 2029 3 is_stmt 1 view .LVU65
- 330              		.loc 2 2029 18 is_stmt 0 view .LVU66
- 331 001a 214A     		ldr	r2, .L26+8
- 332 001c 5360     		str	r3, [r2, #4]
+ARM GAS  /tmp/ccbi20RK.s 			page 45
+
+
+ 393              		.loc 2 2029 3 is_stmt 1 view .LVU81
+ 394              		.loc 2 2029 18 is_stmt 0 view .LVU82
+ 395 001a 294A     		ldr	r2, .L33+8
+ 396 001c 5360     		str	r3, [r2, #4]
 2030:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Int
- 333              		.loc 2 2030 3 is_stmt 1 view .LVU67
- 334              	.LVL8:
- 335              	.LBB10:
- 336              	.LBI10:
+ 397              		.loc 2 2030 3 is_stmt 1 view .LVU83
+ 398              	.LVL8:
+ 399              	.LBB10:
+ 400              	.LBI10:
 1816:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h **** {
- 337              		.loc 2 1816 22 view .LVU68
- 338              	.LBB11:
+ 401              		.loc 2 1816 22 view .LVU84
+ 402              	.LBB11:
 1818:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   {
- 339              		.loc 2 1818 3 view .LVU69
+ 403              		.loc 2 1818 3 view .LVU85
 1824:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   }
- 340              		.loc 2 1824 5 view .LVU70
+ 404              		.loc 2 1824 5 view .LVU86
 1824:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   }
- 341              		.loc 2 1824 46 is_stmt 0 view .LVU71
- 342 001e 214B     		ldr	r3, .L26+12
- 343              	.LVL9:
+ 405              		.loc 2 1824 46 is_stmt 0 view .LVU87
+ 406 001e 294B     		ldr	r3, .L33+12
+ 407              	.LVL9:
 1824:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   }
- 344              		.loc 2 1824 46 view .LVU72
- 345 0020 F021     		movs	r1, #240
- 346 0022 83F82310 		strb	r1, [r3, #35]
- 347              	.LVL10:
+ 408              		.loc 2 1824 46 view .LVU88
+ 409 0020 F021     		movs	r1, #240
+ 410 0022 83F82310 		strb	r1, [r3, #35]
+ 411              	.LVL10:
 1824:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   }
- 348              		.loc 2 1824 46 view .LVU73
- 349              	.LBE11:
- 350              	.LBE10:
-ARM GAS  /tmp/ccaF0h8L.s 			page 44
-
-
+ 412              		.loc 2 1824 46 view .LVU89
+ 413              	.LBE11:
+ 414              	.LBE10:
 2031:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   SysTick->VAL   = 0UL;                                             /* Load the SysTick Counter Val
- 351              		.loc 2 2031 3 is_stmt 1 view .LVU74
- 352              		.loc 2 2031 18 is_stmt 0 view .LVU75
- 353 0026 0023     		movs	r3, #0
- 354 0028 9360     		str	r3, [r2, #8]
+ 415              		.loc 2 2031 3 is_stmt 1 view .LVU90
+ 416              		.loc 2 2031 18 is_stmt 0 view .LVU91
+ 417 0026 0023     		movs	r3, #0
+ 418 0028 9360     		str	r3, [r2, #8]
 2032:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
- 355              		.loc 2 2032 3 is_stmt 1 view .LVU76
- 356              		.loc 2 2032 18 is_stmt 0 view .LVU77
- 357 002a 0723     		movs	r3, #7
- 358 002c 1360     		str	r3, [r2]
+ 419              		.loc 2 2032 3 is_stmt 1 view .LVU92
+ 420              		.loc 2 2032 18 is_stmt 0 view .LVU93
+ 421 002a 0723     		movs	r3, #7
+ 422 002c 1360     		str	r3, [r2]
 2033:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****                    SysTick_CTRL_TICKINT_Msk   |
 2034:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****                    SysTick_CTRL_ENABLE_Msk;                         /* Enable SysTick IRQ and SysTi
 2035:/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include/core_cm4.h ****   return (0UL);                                                     /* Function successful */
- 359              		.loc 2 2035 3 is_stmt 1 view .LVU78
- 360              	.L23:
- 361              		.loc 2 2035 3 is_stmt 0 view .LVU79
- 362              	.LBE9:
- 363              	.LBE8:
-  77:main.c        ****     TIM3_Init();
- 364              		.loc 1 77 5 is_stmt 1 view .LVU80
- 365 002e FFF7FEFF 		bl	TIM3_Init
- 366              	.LVL11:
-  78:main.c        ****     //TIM_EnableIT_UPDATE(TIM3);
-  79:main.c        ****     //TIM_EnableCounter(TIM3);
-  80:main.c        **** 
-  81:main.c        ****     RCC->AHBENR     |= RCC_AHBENR_GPIOBEN; //RCC ON
- 367              		.loc 1 81 5 view .LVU81
- 368              		.loc 1 81 21 is_stmt 0 view .LVU82
- 369 0032 1D4B     		ldr	r3, .L26+16
- 370 0034 5A69     		ldr	r2, [r3, #20]
- 371 0036 42F48022 		orr	r2, r2, #262144
- 372 003a 5A61     		str	r2, [r3, #20]
-  82:main.c        **** 
-  83:main.c        ****     GPIOB->MODER    |= GPIO_MODER_MODER7_0; //mode out
- 373              		.loc 1 83 5 is_stmt 1 view .LVU83
- 374              		.loc 1 83 21 is_stmt 0 view .LVU84
- 375 003c 1B4A     		ldr	r2, .L26+20
- 376 003e 1168     		ldr	r1, [r2]
- 377 0040 41F48041 		orr	r1, r1, #16384
- 378 0044 1160     		str	r1, [r2]
-  84:main.c        ****     GPIOB->OTYPER   = 0;
- 379              		.loc 1 84 5 is_stmt 1 view .LVU85
- 380              		.loc 1 84 21 is_stmt 0 view .LVU86
- 381 0046 0020     		movs	r0, #0
- 382 0048 5060     		str	r0, [r2, #4]
-  85:main.c        ****     GPIOB->OSPEEDR  = 0x03 << 14;
- 383              		.loc 1 85 5 is_stmt 1 view .LVU87
- 384              		.loc 1 85 21 is_stmt 0 view .LVU88
- 385 004a 4FF44041 		mov	r1, #49152
- 386 004e 9160     		str	r1, [r2, #8]
-  86:main.c        **** 
-  87:main.c        ****     RCC->AHBENR     |= RCC_AHBENR_GPIOAEN;		// Подаем тактирование на порт
- 387              		.loc 1 87 5 is_stmt 1 view .LVU89
- 388              		.loc 1 87 21 is_stmt 0 view .LVU90
- 389 0050 5A69     		ldr	r2, [r3, #20]
- 390 0052 42F40032 		orr	r2, r2, #131072
- 391 0056 5A61     		str	r2, [r3, #20]
-ARM GAS  /tmp/ccaF0h8L.s 			page 45
+ 423              		.loc 2 2035 3 is_stmt 1 view .LVU94
+ 424              	.L26:
+ 425              		.loc 2 2035 3 is_stmt 0 view .LVU95
+ 426              	.LBE9:
+ 427              	.LBE8:
+ 101:main.c        ****     SPI1_Init();
+ 428              		.loc 1 101 5 is_stmt 1 view .LVU96
+ 429 002e FFF7FEFF 		bl	SPI1_Init
+ 430              	.LVL11:
+ 102:main.c        ****     TIM3_Init();
+ 431              		.loc 1 102 5 view .LVU97
+ 432 0032 FFF7FEFF 		bl	TIM3_Init
+ 433              	.LVL12:
+ 103:main.c        ****     //
+ 104:main.c        ****     //TIM_EnableIT_UPDATE(TIM3);
+ARM GAS  /tmp/ccbi20RK.s 			page 46
 
 
-  88:main.c        **** 
-  89:main.c        **** 
-  90:main.c        ****     GPIOA->MODER    |= 0x02 << 16; //mode out
- 392              		.loc 1 90 5 is_stmt 1 view .LVU91
- 393              		.loc 1 90 21 is_stmt 0 view .LVU92
- 394 0058 4FF09042 		mov	r2, #1207959552
- 395 005c 1168     		ldr	r1, [r2]
- 396 005e 41F40031 		orr	r1, r1, #131072
- 397 0062 1160     		str	r1, [r2]
-  91:main.c        ****     GPIOA->OTYPER   = 0;
- 398              		.loc 1 91 5 is_stmt 1 view .LVU93
- 399              		.loc 1 91 21 is_stmt 0 view .LVU94
- 400 0064 5060     		str	r0, [r2, #4]
-  92:main.c        ****     GPIOA->OSPEEDR  |= 0x03 << 16;
- 401              		.loc 1 92 5 is_stmt 1 view .LVU95
- 402              		.loc 1 92 21 is_stmt 0 view .LVU96
- 403 0066 9168     		ldr	r1, [r2, #8]
- 404 0068 41F44031 		orr	r1, r1, #196608
- 405 006c 9160     		str	r1, [r2, #8]
-  93:main.c        **** 
-  94:main.c        ****     CLEAR_BIT(RCC->CFGR, RCC_CFGR_PLLNODIV);
- 406              		.loc 1 94 5 is_stmt 1 view .LVU97
- 407 006e 5A68     		ldr	r2, [r3, #4]
- 408 0070 22F00042 		bic	r2, r2, #-2147483648
- 409 0074 5A60     		str	r2, [r3, #4]
-  95:main.c        ****     RCC->CFGR	&=~(RCC_CFGR_MCO);
- 410              		.loc 1 95 5 view .LVU98
- 411              		.loc 1 95 15 is_stmt 0 view .LVU99
- 412 0076 5A68     		ldr	r2, [r3, #4]
- 413 0078 22F0E062 		bic	r2, r2, #117440512
- 414 007c 5A60     		str	r2, [r3, #4]
-  96:main.c        ****     RCC->CFGR |= 0x04 << 24;
- 415              		.loc 1 96 5 is_stmt 1 view .LVU100
- 416              		.loc 1 96 15 is_stmt 0 view .LVU101
- 417 007e 5A68     		ldr	r2, [r3, #4]
- 418 0080 42F08062 		orr	r2, r2, #67108864
- 419 0084 5A60     		str	r2, [r3, #4]
- 420              	.L24:
-  97:main.c        **** 
-  98:main.c        ****     //SystemCoreClockUpdate();
-  99:main.c        **** 
- 100:main.c        **** 
- 101:main.c        ****     while (1)
- 421              		.loc 1 101 5 is_stmt 1 discriminator 1 view .LVU102
- 102:main.c        ****     {
- 103:main.c        ****         delay_us(7);
- 422              		.loc 1 103 9 discriminator 1 view .LVU103
- 423 0086 0720     		movs	r0, #7
- 424 0088 FFF7FEFF 		bl	delay_us
- 425              	.LVL12:
- 104:main.c        ****         GPIOB->ODR ^=   GPIO_ODR_7;
- 426              		.loc 1 104 9 discriminator 1 view .LVU104
- 427              		.loc 1 104 20 is_stmt 0 discriminator 1 view .LVU105
- 428 008c 074A     		ldr	r2, .L26+20
- 429 008e 5369     		ldr	r3, [r2, #20]
- 430 0090 83F08003 		eor	r3, r3, #128
- 431 0094 5361     		str	r3, [r2, #20]
-ARM GAS  /tmp/ccaF0h8L.s 			page 46
+ 105:main.c        ****     //TIM_EnableCounter(TIM3);
+ 106:main.c        **** 
+ 107:main.c        ****     RCC->AHBENR     |= RCC_AHBENR_GPIOBEN; //RCC ON
+ 434              		.loc 1 107 5 view .LVU98
+ 435              		.loc 1 107 21 is_stmt 0 view .LVU99
+ 436 0036 244B     		ldr	r3, .L33+16
+ 437 0038 5A69     		ldr	r2, [r3, #20]
+ 438 003a 42F48022 		orr	r2, r2, #262144
+ 439 003e 5A61     		str	r2, [r3, #20]
+ 108:main.c        **** 
+ 109:main.c        ****     GPIOB->MODER    |= GPIO_MODER_MODER7_0; //mode out
+ 440              		.loc 1 109 5 is_stmt 1 view .LVU100
+ 441              		.loc 1 109 21 is_stmt 0 view .LVU101
+ 442 0040 224A     		ldr	r2, .L33+20
+ 443 0042 1168     		ldr	r1, [r2]
+ 444 0044 41F48041 		orr	r1, r1, #16384
+ 445 0048 1160     		str	r1, [r2]
+ 110:main.c        ****     GPIOB->OTYPER   = 0;
+ 446              		.loc 1 110 5 is_stmt 1 view .LVU102
+ 447              		.loc 1 110 21 is_stmt 0 view .LVU103
+ 448 004a 0020     		movs	r0, #0
+ 449 004c 5060     		str	r0, [r2, #4]
+ 111:main.c        ****     GPIOB->OSPEEDR  = 0x03 << 14;
+ 450              		.loc 1 111 5 is_stmt 1 view .LVU104
+ 451              		.loc 1 111 21 is_stmt 0 view .LVU105
+ 452 004e 4FF44041 		mov	r1, #49152
+ 453 0052 9160     		str	r1, [r2, #8]
+ 112:main.c        **** 
+ 113:main.c        ****     RCC->AHBENR     |= RCC_AHBENR_GPIOAEN;		// Подаем тактирование на порт
+ 454              		.loc 1 113 5 is_stmt 1 view .LVU106
+ 455              		.loc 1 113 21 is_stmt 0 view .LVU107
+ 456 0054 5A69     		ldr	r2, [r3, #20]
+ 457 0056 42F40032 		orr	r2, r2, #131072
+ 458 005a 5A61     		str	r2, [r3, #20]
+ 114:main.c        **** 
+ 115:main.c        **** 
+ 116:main.c        ****     GPIOA->MODER    |= 0x02 << 16; //mode out
+ 459              		.loc 1 116 5 is_stmt 1 view .LVU108
+ 460              		.loc 1 116 21 is_stmt 0 view .LVU109
+ 461 005c 4FF09042 		mov	r2, #1207959552
+ 462 0060 1168     		ldr	r1, [r2]
+ 463 0062 41F40031 		orr	r1, r1, #131072
+ 464 0066 1160     		str	r1, [r2]
+ 117:main.c        ****     GPIOA->OTYPER    = 0;
+ 465              		.loc 1 117 5 is_stmt 1 view .LVU110
+ 466              		.loc 1 117 22 is_stmt 0 view .LVU111
+ 467 0068 5060     		str	r0, [r2, #4]
+ 118:main.c        ****     GPIOA->OSPEEDR  |= 0x03 << 16;
+ 468              		.loc 1 118 5 is_stmt 1 view .LVU112
+ 469              		.loc 1 118 21 is_stmt 0 view .LVU113
+ 470 006a 9168     		ldr	r1, [r2, #8]
+ 471 006c 41F44031 		orr	r1, r1, #196608
+ 472 0070 9160     		str	r1, [r2, #8]
+ 119:main.c        ****     //GPIOA->AFR[1]     |= 0x00 << ;
+ 120:main.c        **** 
+ 121:main.c        ****     CLEAR_BIT(RCC->CFGR, RCC_CFGR_PLLNODIV);
+ 473              		.loc 1 121 5 is_stmt 1 view .LVU114
+ARM GAS  /tmp/ccbi20RK.s 			page 47
 
 
- 432 0096 F6E7     		b	.L24
- 433              	.L27:
- 434              		.align	2
- 435              	.L26:
- 436 0098 00000000 		.word	SystemCoreClock
- 437 009c D34D6210 		.word	274877907
- 438 00a0 10E000E0 		.word	-536813552
- 439 00a4 00ED00E0 		.word	-536810240
- 440 00a8 00100240 		.word	1073876992
- 441 00ac 00040048 		.word	1207960576
- 442              		.cfi_endproc
- 443              	.LFE135:
- 445              		.global	ticks
- 446              		.section	.bss.ticks,"aw",%nobits
- 447              		.align	2
- 448              		.set	.LANCHOR0,. + 0
- 451              	ticks:
- 452 0000 00000000 		.space	4
- 453              		.text
- 454              	.Letext0:
- 455              		.file 3 "stm32f303xe.h"
- 456              		.file 4 "/usr/lib/gcc/arm-none-eabi/8.3.1/include/stdint.h"
- 457              		.file 5 "/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h"
-ARM GAS  /tmp/ccaF0h8L.s 			page 47
+ 474 0072 5A68     		ldr	r2, [r3, #4]
+ 475 0074 22F00042 		bic	r2, r2, #-2147483648
+ 476 0078 5A60     		str	r2, [r3, #4]
+ 122:main.c        ****     RCC->CFGR	&=~(RCC_CFGR_MCO);
+ 477              		.loc 1 122 5 view .LVU115
+ 478              		.loc 1 122 15 is_stmt 0 view .LVU116
+ 479 007a 5A68     		ldr	r2, [r3, #4]
+ 480 007c 22F0E062 		bic	r2, r2, #117440512
+ 481 0080 5A60     		str	r2, [r3, #4]
+ 123:main.c        ****     RCC->CFGR |= 0x04 << 24;
+ 482              		.loc 1 123 5 is_stmt 1 view .LVU117
+ 483              		.loc 1 123 15 is_stmt 0 view .LVU118
+ 484 0082 5A68     		ldr	r2, [r3, #4]
+ 485 0084 42F08062 		orr	r2, r2, #67108864
+ 486 0088 5A60     		str	r2, [r3, #4]
+ 487              	.L30:
+ 124:main.c        **** 
+ 125:main.c        ****     //SystemCoreClockUpdate();
+ 126:main.c        **** 
+ 127:main.c        **** 
+ 128:main.c        ****     while (1)
+ 488              		.loc 1 128 5 is_stmt 1 view .LVU119
+ 129:main.c        ****     {
+ 130:main.c        ****         delay_us(100);
+ 489              		.loc 1 130 9 view .LVU120
+ 490 008a 6420     		movs	r0, #100
+ 491 008c FFF7FEFF 		bl	delay_us
+ 492              	.LVL13:
+ 131:main.c        **** 
+ 132:main.c        ****         while(!(SPI1->SR & SPI_SR_TXE));
+ 493              		.loc 1 132 9 view .LVU121
+ 494              	.L27:
+ 495              		.loc 1 132 40 discriminator 1 view .LVU122
+ 496              		.loc 1 132 21 is_stmt 0 discriminator 1 view .LVU123
+ 497 0090 0F4B     		ldr	r3, .L33+24
+ 498 0092 9B68     		ldr	r3, [r3, #8]
+ 499              		.loc 1 132 14 discriminator 1 view .LVU124
+ 500 0094 13F0020F 		tst	r3, #2
+ 501 0098 FAD0     		beq	.L27
+ 133:main.c        **** 
+ 134:main.c        ****         if(SPI1->SR & SPI_SR_BSY) {
+ 502              		.loc 1 134 9 is_stmt 1 view .LVU125
+ 503              		.loc 1 134 16 is_stmt 0 view .LVU126
+ 504 009a 0D4B     		ldr	r3, .L33+24
+ 505 009c 9B68     		ldr	r3, [r3, #8]
+ 506              		.loc 1 134 11 view .LVU127
+ 507 009e 13F0800F 		tst	r3, #128
+ 508 00a2 03D1     		bne	.L32
+ 135:main.c        ****             GPIOB->ODR |= GPIO_ODR_7;
+ 136:main.c        ****             while(1);
+ 137:main.c        ****         }
+ 138:main.c        **** 
+ 139:main.c        ****         //GPIOB->ODR ^=   GPIO_ODR_7;
+ 140:main.c        ****         *(uint8_t*)&SPI1->DR = 0b0000001;
+ 509              		.loc 1 140 9 is_stmt 1 view .LVU128
+ 510              		.loc 1 140 30 is_stmt 0 view .LVU129
+ 511 00a4 0B4B     		ldr	r3, .L33+28
+ARM GAS  /tmp/ccbi20RK.s 			page 48
+
+
+ 512 00a6 0122     		movs	r2, #1
+ 513 00a8 1A70     		strb	r2, [r3]
+ 130:main.c        **** 
+ 514              		.loc 1 130 9 view .LVU130
+ 515 00aa EEE7     		b	.L30
+ 516              	.L32:
+ 135:main.c        ****             GPIOB->ODR |= GPIO_ODR_7;
+ 517              		.loc 1 135 13 is_stmt 1 view .LVU131
+ 135:main.c        ****             GPIOB->ODR |= GPIO_ODR_7;
+ 518              		.loc 1 135 24 is_stmt 0 view .LVU132
+ 519 00ac 074A     		ldr	r2, .L33+20
+ 520 00ae 5369     		ldr	r3, [r2, #20]
+ 521 00b0 43F08003 		orr	r3, r3, #128
+ 522 00b4 5361     		str	r3, [r2, #20]
+ 523              	.L29:
+ 136:main.c        ****         }
+ 524              		.loc 1 136 13 is_stmt 1 discriminator 1 view .LVU133
+ 136:main.c        ****         }
+ 525              		.loc 1 136 21 discriminator 1 view .LVU134
+ 526 00b6 FEE7     		b	.L29
+ 527              	.L34:
+ 528              		.align	2
+ 529              	.L33:
+ 530 00b8 00000000 		.word	SystemCoreClock
+ 531 00bc D34D6210 		.word	274877907
+ 532 00c0 10E000E0 		.word	-536813552
+ 533 00c4 00ED00E0 		.word	-536810240
+ 534 00c8 00100240 		.word	1073876992
+ 535 00cc 00040048 		.word	1207960576
+ 536 00d0 00300140 		.word	1073819648
+ 537 00d4 0C300140 		.word	1073819660
+ 538              		.cfi_endproc
+ 539              	.LFE136:
+ 541              		.global	ticks
+ 542              		.section	.bss.ticks,"aw",%nobits
+ 543              		.align	2
+ 544              		.set	.LANCHOR0,. + 0
+ 547              	ticks:
+ 548 0000 00000000 		.space	4
+ 549              		.text
+ 550              	.Letext0:
+ 551              		.file 3 "stm32f303xe.h"
+ 552              		.file 4 "/usr/lib/gcc/arm-none-eabi/8.3.1/include/stdint.h"
+ 553              		.file 5 "/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h"
+ARM GAS  /tmp/ccbi20RK.s 			page 49
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccaF0h8L.s:18     .text.SysTick_Handler:0000000000000000 $t
-     /tmp/ccaF0h8L.s:26     .text.SysTick_Handler:0000000000000000 SysTick_Handler
-     /tmp/ccaF0h8L.s:44     .text.SysTick_Handler:000000000000000c $d
-     /tmp/ccaF0h8L.s:49     .text.delay_ms:0000000000000000 $t
-     /tmp/ccaF0h8L.s:56     .text.delay_ms:0000000000000000 delay_ms
-     /tmp/ccaF0h8L.s:84     .text.delay_ms:0000000000000010 $d
-     /tmp/ccaF0h8L.s:89     .text.delay_us:0000000000000000 $t
-     /tmp/ccaF0h8L.s:96     .text.delay_us:0000000000000000 delay_us
-     /tmp/ccaF0h8L.s:123    .text.delay_us:0000000000000010 $d
-     /tmp/ccaF0h8L.s:128    .text.RCC_Init:0000000000000000 $t
-     /tmp/ccaF0h8L.s:135    .text.RCC_Init:0000000000000000 RCC_Init
-     /tmp/ccaF0h8L.s:230    .text.RCC_Init:000000000000008c $d
-     /tmp/ccaF0h8L.s:236    .text.TIM3_Init:0000000000000000 $t
-     /tmp/ccaF0h8L.s:243    .text.TIM3_Init:0000000000000000 TIM3_Init
-     /tmp/ccaF0h8L.s:283    .text.TIM3_Init:0000000000000030 $d
-     /tmp/ccaF0h8L.s:288    .text.main:0000000000000000 $t
-     /tmp/ccaF0h8L.s:295    .text.main:0000000000000000 main
-     /tmp/ccaF0h8L.s:436    .text.main:0000000000000098 $d
-     /tmp/ccaF0h8L.s:451    .bss.ticks:0000000000000000 ticks
-     /tmp/ccaF0h8L.s:447    .bss.ticks:0000000000000000 $d
+     /tmp/ccbi20RK.s:18     .text.SysTick_Handler:0000000000000000 $t
+     /tmp/ccbi20RK.s:26     .text.SysTick_Handler:0000000000000000 SysTick_Handler
+     /tmp/ccbi20RK.s:44     .text.SysTick_Handler:000000000000000c $d
+     /tmp/ccbi20RK.s:49     .text.delay_ms:0000000000000000 $t
+     /tmp/ccbi20RK.s:56     .text.delay_ms:0000000000000000 delay_ms
+     /tmp/ccbi20RK.s:84     .text.delay_ms:0000000000000010 $d
+     /tmp/ccbi20RK.s:89     .text.delay_us:0000000000000000 $t
+     /tmp/ccbi20RK.s:96     .text.delay_us:0000000000000000 delay_us
+     /tmp/ccbi20RK.s:123    .text.delay_us:0000000000000010 $d
+     /tmp/ccbi20RK.s:128    .text.RCC_Init:0000000000000000 $t
+     /tmp/ccbi20RK.s:135    .text.RCC_Init:0000000000000000 RCC_Init
+     /tmp/ccbi20RK.s:230    .text.RCC_Init:000000000000008c $d
+     /tmp/ccbi20RK.s:236    .text.TIM3_Init:0000000000000000 $t
+     /tmp/ccbi20RK.s:243    .text.TIM3_Init:0000000000000000 TIM3_Init
+     /tmp/ccbi20RK.s:283    .text.TIM3_Init:0000000000000030 $d
+     /tmp/ccbi20RK.s:288    .text.SPI1_Init:0000000000000000 $t
+     /tmp/ccbi20RK.s:295    .text.SPI1_Init:0000000000000000 SPI1_Init
+     /tmp/ccbi20RK.s:346    .text.SPI1_Init:0000000000000048 $d
+     /tmp/ccbi20RK.s:352    .text.main:0000000000000000 $t
+     /tmp/ccbi20RK.s:359    .text.main:0000000000000000 main
+     /tmp/ccbi20RK.s:530    .text.main:00000000000000b8 $d
+     /tmp/ccbi20RK.s:547    .bss.ticks:0000000000000000 ticks
+     /tmp/ccbi20RK.s:543    .bss.ticks:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 SystemInit

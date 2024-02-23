@@ -36,16 +36,16 @@ void RCC_Init(void) {
     MODIFY_REG(RCC->CFGR, RCC_CFGR_PPRE2_Msk, RCC_CFGR_HPRE_DIV1);
     // 3. hse generator start
     SET_BIT(RCC->CR, RCC_CR_HSEON);
-    while(!READ_BIT(RCC->CR, RCC_CR_HSERDY)) {}
+    while(!READ_BIT(RCC->CR, RCC_CR_HSERDY));
     // 4. pll config
     MODIFY_REG(RCC->CFGR, RCC_CFGR_PLLMUL_Msk, RCC_CFGR_PLLMUL9);
     SET_BIT(RCC->CFGR, RCC_CFGR_PLLSRC);
     // 5. pll start
     SET_BIT(RCC->CR, RCC_CR_PLLON);
-    while(!READ_BIT(RCC->CR, RCC_CR_PLLRDY)) {}
+    while(!READ_BIT(RCC->CR, RCC_CR_PLLRDY));
     // 6. switch system clock input to pll
     MODIFY_REG(RCC->CFGR, RCC_CFGR_SW_Msk, RCC_CFGR_SW_PLL);
-    while(READ_BIT(RCC->CFGR, RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL) {}
+    while(READ_BIT(RCC->CFGR, RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
     // 7. update clock value
     SystemCoreClockUpdate();
     return;
@@ -70,11 +70,37 @@ void TIM3_Init(void) {
     return;
 }
 
+void SPI1_Init(void) {
+    // 1. GPIO pins used by SPI1 init
+    SET_BIT(RCC->AHBENR, RCC_AHBENR_GPIOAEN);
+    GPIOA->MODER |= 0x02 << 10 | 0x02 << 14;
+
+    GPIOA->AFR[0] |= (0x05<<5*4);
+	//GPIOA->AFR[0] |= (0x05<<6*4);
+	GPIOA->AFR[0] |= (0x05<<7*4);
+    // 2. enable SPI1 clock on APB2 bus
+    SET_BIT(RCC->APB2ENR, RCC_APB2ENR_SPI1EN);
+    //GPIOA->OTYPER = 0;
+    // 3. SPI1 init
+    SPI1->CR1 = 1 << SPI_CR1_BIDIMODE_Pos | 1 << SPI_CR1_BIDIOE_Pos |
+                1 << SPI_CR1_LSBFIRST_Pos | 1 << SPI_CR1_MSTR_Pos   |
+                1 << SPI_CR1_SSM_Pos      | 0x02 << SPI_CR1_BR_Pos  |
+                1 << SPI_CR1_SSI_Pos      | 1 << SPI_CR1_LSBFIRST_Pos;
+    SPI1->CR2 = 0x07 << SPI_CR2_DS_Pos;
+    // 4. enable SPI1
+    SET_BIT(SPI1->CR1, SPI_CR1_SPE);
+    //SPI1->CR1 |= 1 << SPI_CR1_SPE;
+    return;
+}
+
 int main (void)
 {
+    //Peripherial init section
     RCC_Init();
     SysTick_Config(SystemCoreClock / 1000);
+    SPI1_Init();
     TIM3_Init();
+    //
     //TIM_EnableIT_UPDATE(TIM3);
     //TIM_EnableCounter(TIM3);
 
@@ -88,8 +114,9 @@ int main (void)
 
 
     GPIOA->MODER    |= 0x02 << 16; //mode out
-    GPIOA->OTYPER   = 0;
+    GPIOA->OTYPER    = 0;
     GPIOA->OSPEEDR  |= 0x03 << 16;
+    //GPIOA->AFR[1]     |= 0x00 << ;
 
     CLEAR_BIT(RCC->CFGR, RCC_CFGR_PLLNODIV);
     RCC->CFGR	&=~(RCC_CFGR_MCO);
@@ -100,10 +127,16 @@ int main (void)
 
     while (1)
     {
-        delay_us(7);
-        GPIOB->ODR ^=   GPIO_ODR_7;
-        /*SET_BIT(GPIOB->ODR, GPIO_ODR_7);
-        delay(2400000);
-        CLEAR_BIT(GPIOB->ODR, GPIO_ODR_7);*/
+        delay_us(100);
+
+        while(!(SPI1->SR & SPI_SR_TXE));
+
+        if(SPI1->SR & SPI_SR_BSY) {
+            GPIOB->ODR |= GPIO_ODR_7;
+            while(1);
+        }
+
+        //GPIOB->ODR ^=   GPIO_ODR_7;
+        *(uint8_t*)&SPI1->DR = 0b0000001;
     }
 }
