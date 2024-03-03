@@ -5,9 +5,9 @@ TARGET = minesweeperTV
 # building variables
 ######################################
 # debug build?
-DEBUG = 1
+DEBUG = 0
 # optimization
-OPT = -Og
+OPT = -O3
 
 
 #######################################
@@ -21,7 +21,10 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
-main.c \
+Src/game_symbols.c \
+Src/game_engine.c \
+Src/gdi.c \
+Src/main.c \
 system_stm32f3xx.c
 
 # ASM sources
@@ -78,6 +81,7 @@ AS_INCLUDES =
 
 # C includes
 C_INCLUDES =  \
+-I/home/ermolaev/minesweeperTV_cmsis/Inc \
 -I/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Device/ST/STM32F3xx/Include \
 -I/home/ermolaev/STM32CubeF3/Drivers/CMSIS/Include
 

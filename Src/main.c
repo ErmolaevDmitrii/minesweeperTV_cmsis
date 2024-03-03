@@ -13,7 +13,6 @@ void delay_ms(uint32_t ms) {
 void delay_us(uint16_t us) {
     TIM3->CNT = 0;
     TIM3->EGR |= 1;
-    //uint16_t a = TIM3->CNT;
     while(TIM3->CNT < us);
     return;
 }
@@ -44,10 +43,37 @@ void RCC_Init(void) {
     return;
 }
 
+void EXTI_Init(void)
+{
+    GPIOB->MODER &= ~(GPIO_MODER_MODER11_0 | GPIO_MODER_MODER10_0);
+    GPIOB->PUPDR |= 0x01 << 22 | 0x01 << 20;
+
+    GPIOE->MODER &= ~(GPIO_MODER_MODER7_0  | GPIO_MODER_MODER8_0 |
+                      GPIO_MODER_MODER14_0 | GPIO_MODER_MODER15_0);
+    GPIOE->PUPDR |= 0x01 << 30 | 0x01 << 28 | 0x01 << 16 | 0x01 << 14;
+
+    SET_BIT(RCC->APB2ENR, RCC_APB2ENR_SYSCFGEN);
+
+    SYSCFG->EXTICR[1] |= SYSCFG_EXTICR2_EXTI7_PE;
+    SYSCFG->EXTICR[2] |= SYSCFG_EXTICR3_EXTI8_PE  |
+                         SYSCFG_EXTICR3_EXTI10_PB |
+                         SYSCFG_EXTICR3_EXTI11_PB;
+    SYSCFG->EXTICR[3] |= SYSCFG_EXTICR4_EXTI14_PE |
+                         SYSCFG_EXTICR4_EXTI15_PE;
+
+    EXTI->IMR |= EXTI_IMR_MR7  | EXTI_IMR_MR8  | EXTI_IMR_MR10 |
+                 EXTI_IMR_MR11 | EXTI_IMR_MR14 | EXTI_IMR_MR15;
+
+    EXTI->FTSR |= EXTI_FTSR_TR7   | EXTI_FTSR_TR8  | EXTI_FTSR_TR10 |
+                  EXTI_FTSR_TR11  | EXTI_FTSR_TR14 | EXTI_FTSR_TR15;
+    return;
+}
+
 void GPIO_Init(void) {
     //1. gpio buses init
     SET_BIT(RCC->AHBENR, RCC_AHBENR_GPIOAEN);
     SET_BIT(RCC->AHBENR, RCC_AHBENR_GPIOBEN);
+    SET_BIT(RCC->AHBENR, RCC_AHBENR_GPIOEEN);
 
     //2. pins init
     //SPI MOSI and SCK pins
@@ -71,6 +97,8 @@ void GPIO_Init(void) {
     //Red LED pin
     GPIOB->MODER    |= GPIO_MODER_MODER14_0;
 
+    //Buttons for game control
+    EXTI_Init();
     return;
 }
 
@@ -144,7 +172,6 @@ void TIM1_UP_TIM16_IRQHandler(void)
     {
         CLEAR_BIT(TIM1->SR, TIM_SR_UIF);
         TIM1->SR;
-        //GPIOB->ODR ^= GPIO_ODR_5;
         CLEAR_BIT(GPIOB->ODR, GPIO_ODR_5);
 
         if(line == 313) {
@@ -186,21 +213,54 @@ void TIM1_UP_TIM16_IRQHandler(void)
     return;
 }
 
-uint32_t Cock() {
-    return 1000;
-}
+void EXTI9_5_IRQHandler(void) {
+    GPIOB->ODR ^= GPIO_ODR_14;
+    volatile uint8_t btn_num;
 
-void draw_rect(uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
-    for(int i = y; i < y + height; ++i) {
-        for(int j = x; j < x + width; ++j) {
-            if(j / 8 == 19) {
-              continue;
-            }
-            image[i * 23 + j / 8] |= (1 << (j % 8));
-        }
+    if(READ_BIT(EXTI->PR, EXTI_PR_PR7)){
+        btn_num = 5;
+        EXTI->PR = EXTI_PR_PR7;
     }
+    else if(READ_BIT(EXTI->PR, EXTI_PR_PR8)) {
+        btn_num = 4;
+        EXTI->PR = EXTI_PR_PR8;
+    }
+
+    buttons[btn_num].time_irq = GetTick();
+    buttons[btn_num].flag_irq = 1;
+    return;
 }
 
+
+void EXTI15_10_IRQHandler(void) {
+    GPIOB->ODR ^= GPIO_ODR_14;
+    volatile uint8_t btn_num;
+
+    if(READ_BIT(EXTI->PR, EXTI_PR_PR10)){
+        btn_num = 1;
+        EXTI->PR = EXTI_PR_PR10;
+    }
+    else if(READ_BIT(EXTI->PR, EXTI_PR_PR11)) {
+        btn_num = 2;
+        EXTI->PR = EXTI_PR_PR11;
+    }
+    else if(READ_BIT(EXTI->PR, EXTI_PR_PR14)){
+        btn_num = 3;
+        EXTI->PR = EXTI_PR_PR14;
+    }
+    else if(READ_BIT(EXTI->PR, EXTI_PR_PR15)) {
+        btn_num = 0;
+        EXTI->PR = EXTI_PR_PR15;
+    }
+
+    buttons[btn_num].time_irq = GetTick();
+    buttons[btn_num].flag_irq = 1;
+    return;
+}
+
+uint32_t GetTick() {
+    return ticks;
+}
 
 int main (void)
 {
@@ -214,11 +274,31 @@ int main (void)
     TIM3_Init();
     TIM1_Init();
 
-    game_handle game = {9, 9, game_field, &handle, Cock};
+    NVIC_EnableIRQ(EXTI9_5_IRQn);
+    NVIC_EnableIRQ(EXTI15_10_IRQn);
+
+    game_handle game = {9, 9, game_field, &handle, GetTick};
     game_start(&game);
 
     while (1)
     {
-        __NOP();
+        button_handle *temp;
+
+        for(uint8_t i = 0; i < (sizeof(buttons) / sizeof(button_handle)); ++i) {
+            temp = buttons + i;
+
+            if(temp->flag_irq) {
+
+                if(!temp->flag_exec) {
+                    temp->action(&game);
+                    temp->flag_exec = 1;
+                }
+
+                if((GetTick() - temp->time_irq) > 300) {
+                    temp->flag_irq = 0;
+                    temp->flag_exec = 0;
+                }
+            }
+        }
     }
 }
